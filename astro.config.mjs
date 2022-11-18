@@ -11,6 +11,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://majormoney.github.io',
-  base: '/PNFC_1st_portfolio',
+  base: '/1stPortfolio',
   integrations: [mdx(), sitemap(), react(), tailwind()]
 });
