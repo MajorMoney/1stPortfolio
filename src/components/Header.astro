@@ -1,0 +1,36 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../config";
+import { FiGithub } from "react-icons/Fi";
+import { AiOutlineLinkedin } from "react-icons/ai/index.js";
+import ThemeToggle from "./ThemeToggleButton";
+---
+
+<header
+	class="sticky top-0 w-full p-2 z-20 backdrop-blur-md h-max-[8%] text-dark-orange dark:text-pele bg-nav-blue bg-opacity-20 "
+>
+	<div class="mx-auto">
+		<nav class="flex items-center  w-full gap-3 text-base m-auto flex-grow">
+			<a class="z-20 block" href="#Logo">
+				<section
+					class="box w-[60px] h-[60px] border-orange-300 dark:border-blue-50 border-4 grid grid-rows-2 grid-cols-2 text-center font-orb dark:text-blue-50 font-semibold text-xl m-2 "
+				>
+					<h2>P</h2>
+					<h2>N</h2>
+					<h2>F</h2>
+					<h2>C</h2>
+				</section>
+			</a>
+			<div class="items-center place-content-center gap-6 flex">
+				
+				<HeaderLink 
+				href="#Links"
+				class="absolute left-1/2 translate-x-[-50%] font-semibold text-xl hover:text-2xl">Links</HeaderLink>
+				<!---<HeaderLink class="self-center">AboutMe</HeaderLink>
+				<HeaderLink>Projects</HeaderLink>--->
+			</div>
+			<div class="flex-1"></div>
+			<ThemeToggle client:load />
+		</nav>
+	</div>
+</header>

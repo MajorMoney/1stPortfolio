@@ -1,0 +1,80 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Body from "../components/Body.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { IoArrowForward } from "react-icons/io5/index.js";
+import HomePiece from "../components/HomePiece.astro";
+import AboutSection from "../components/AboutSection.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<meta charset="UTF-8">
+	</head>
+	<Body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<a class="absolute top-0" id="Logo"></a>
+			<HomePiece />
+			<AboutSection/>
+			<h1
+				class="text-nav-blue dark:text-jade font-orb font-bold text-center m-4 text-2xl"
+			>
+				Title1
+			</h1>
+			<section>
+				<p class="mb-7 mx-3 indent-4 ">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Praesent facilisis, lacus at suscipit rutrum, ante neque
+					consequat nunc, eget scelerisque nibh eros ut tellus.
+					Pellentesque quis felis lacus. Nulla at blandit arcu, eget
+					dignissim risus. Vivamus interdum sapien id lib ero
+					consequat, id condimentum libero suscipit. Etiam hendrerit
+					scelerisque ligula, in vulputate velit feugiat non. Quisque
+					id ultricies nulla. Aenean egestas magna sit amet ante
+					tincidunt rhoncus. Donec volutpat, magna ac semper
+					porttitor, leo sapien laoreet elit, a vehicula justo orci
+					sed ligula. Sed feugiat justo eu augue imperdiet, quis
+					lobortis tortor consectetur. Cras malesuada malesuada
+					dignissim. Cras id rutrum nibh, vel posuere diam.
+				</p>
+				<p class="mb-7 mx-3 indent-4">
+					Quisque in metus ut arcu elementum accumsan. Proin venenatis
+					orci at lorem mollis, ac elementum urna sodales.
+					Pellentesque volutpat mollis odio, eleifend feugiat sem
+					ullamcorper eu. Donec convallis justo justo, quis
+					pellentesque nunc malesuada ut. Donec diam magna, dapibus at
+					tortor non, sollicitudin ultricies neque. Etiam fringilla
+					libero et tellus consectetur, eget tristique velit mollis.
+					Suspendisse non tortor imperdiet, molestie nibh ac, iaculis
+					metus. Donec in suscipit ipsum. Integer sollicitudin nec sem
+					at egestas. Aenean a ipsum vel ante posuere gravida at at
+					est. Vestibulum convallis vel velit nec gravida. Curabitur
+					vel turpis quis libero interdum tristique.
+					<a
+						class="inline-flex items-center gap-1 ident-1 text-dark-orange dark:text-pele"
+					>
+						Some link if wanted<IoArrowForward className="inline" />
+					</a>
+				</p> 
+			</section>
+			<h1
+				class="text-nav-blue dark:text-jade font-orb font-bold text-center m-4 text-2xl"
+			>
+				<a id="Title2"></a>Title2
+			</h1>
+		</main>
+		<Footer />
+	</Body>
+
+	<!--	<style>
+		main {
+			padding-top: clamp(105px, 10%, 150px);
+		}
+	</style>
+-->
+</html>
