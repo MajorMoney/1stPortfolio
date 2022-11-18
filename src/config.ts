@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'PNFC Portfolio';
 export const SITE_DESCRIPTION = "Observo com atenção, inspiração por um segundo; Entre e limpe os pés, seja bem vindo ao meu mundo";
-export const HOMEPAGE_URL = 'TBD'
+export const HOMEPAGE_URL = 'https://majormoney.github.io/1stPortfolio/'

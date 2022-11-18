@@ -13,4 +13,4 @@ export default defineConfig({
   site: 'https://majormoney.github.io',
   base: '/1stPortfolio',
   integrations: [mdx(), sitemap(), react(), tailwind()]
-});
+}); 
