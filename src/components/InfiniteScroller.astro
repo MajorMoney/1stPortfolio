@@ -1,0 +1,89 @@
+<container
+    class="relative block overflow-hidden mx-auto my-8 bg-black h-[500px] w-3/5 rounded-3xl"
+>
+    <div id="img"></div>
+    <div id="img3"></div>
+    <div id="img1"></div>
+    <div id="img4"></div>
+    <div id="img2"></div>
+</container>
+
+<style>
+    /*for media do different (maybe same but vertical)*/
+    #img {
+        background: url("/1stPortfolio/IST.svg");
+        position: absolute;
+        
+        height: 150px;
+        width: 150px;
+        animation: slide1 10s linear infinite;
+    }
+    #img1 {
+        background: url("/1stPortfolio/IST.svg");
+        position: absolute;
+        left:-300px;
+        height: 150px;
+        width: 150px;
+        animation: slide 10s linear infinite;
+    }
+    #img2{
+        background: url("/1stPortfolio/IST.svg");
+        position: absolute;
+        top: 302px;
+        left:-150px;
+        height: 150px;
+        width: 150px;
+        animation: slide 10s linear infinite;
+    }
+    #img3{
+        background: url("/1stPortfolio/IST.svg");
+        position: absolute;
+        left:-150px;
+        top: 150px;
+        height: 150px;
+        width: 150;
+        animation: slide 5s linear infinite;
+    }
+    #img4{
+        background: url("/1stPortfolio/IST.svg");
+        position: absolute;
+        top: 302px;
+        left:-150px;
+        height: 150px;
+        width: 150px;
+        animation: slide 10s linear infinite;
+    }
+ 
+
+    @keyframes slide1 {
+        0%{
+            left:50%
+        }
+        50%{
+            left:100%
+        }
+        50.000000001%{
+            left:-150px
+        }
+        100%{
+            left:50%
+        }
+    }
+
+    @keyframes slide {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            left: 100%;
+        }
+    }
+    /*@keyframes slide {
+  0% {
+    transform: translate(200%);
+  }
+  100% {
+    transform: translate(-100%); /* The image width 
+  }
+}*/
+</style>
