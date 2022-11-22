@@ -19,8 +19,8 @@
     <img class="h-[80px] w-[80px]" src="/1stPortfolio/aws.svg" id="img11" />
     <img class="h-[80px] w-[80px]" src="/1stPortfolio/nextjs.svg" id="img12" />
     <img class="h-[80px] w-[80px]" src="/1stPortfolio/k8.svg" id="img13" />
-    <img class="h-[80px] w-[80px] rounded-3xl" src="/1stPortfolio/google.svg" id="img14" />
-    <img class="h-[80px] w-[80px] rounded-3xl" src="/1stPortfolio/ts.svg" id="img15" />
+    <img class="h-[70px] w-[80px] rounded-3xl" src="/1stPortfolio/google.svg" id="img14" />
+    <img class="h-[70px] w-[80px] rounded-3xl" src="/1stPortfolio/ts.svg" id="img15" />
 </container>
 
 <style>
@@ -28,82 +28,82 @@
     #img {
         position: absolute;
         top: 8px;
-        animation: slide0 10s linear infinite;
+        animation: slide0 20s linear infinite;
     }
     #img1 {
         position: absolute;
         top: 8px;
-        animation: slide50 10s linear infinite;
+        animation: slide50 20s linear infinite;
     }
     #img9 {
         position: absolute;
         top: 8px;
-        animation: slide25 10s linear infinite;
+        animation: slide25 20s linear infinite;
     }
     #img5 {
         position: absolute;
         top: 8px;
-        animation: slide75 10s linear infinite;
+        animation: slide75 20s linear infinite;
     }
     #img8 {
         position: absolute;
         top: 96px;
-        animation: slide0 10s linear infinite;
+        animation: rightslide0 20s linear infinite;
     }
     #img2 {
         position: absolute;
         top: 96px;
-        animation: slide25 10s linear infinite;
+        animation: rightslide25 20s linear infinite;
     }
     #img10 {
         position: absolute;
         top: 96px;
-        animation: slide50 10s linear infinite;
+        animation: rightslide50 20s linear infinite;
     }
     #img3 {
         position: absolute;
         top: 96px;
-        animation: slide75 10s linear infinite;
+        animation: rightslide75 20s linear infinite;
     }
     #img4 {
         position: absolute;
         top: 184px;
-        animation: slide25 10s linear infinite;
+        animation: slide25 15s linear infinite;
     }
     #img12 {
         position: absolute;
         top: 184px;
-        animation: slide0 10s linear infinite;
+        animation: slide0 15s linear infinite;
     }
     #img15 {
         position: absolute;
         top: 184px;
-        animation: slide75 10s linear infinite;
+        animation: slide75 15s linear infinite;
     }
     #img7 {
         position: absolute;
         top: 184px;
-        animation: slide50 10s linear infinite;
+        animation: slide50 15s linear infinite;
     }
     #img6 {
         position: absolute;
         top: 272px;
-        animation: slide0 10s linear infinite;
+        animation: rightslide0 15s linear infinite;
     }
     #img14 {
         position: absolute;
         top: 272px;
-        animation: slide25 10s linear infinite;
+        animation: rightslide25 15s linear infinite;
     }
     #img11 {
         position: absolute;
         top: 272px;
-        animation: slide50 10s linear infinite;
+        animation: rightslide50 15s linear infinite;
     }
     #img13 {
         position: absolute;
         top: 272px;
-        animation: slide75 10s linear infinite;
+        animation: rightslide75 15s linear infinite;
     }
 
     @keyframes slide0 {
@@ -157,6 +157,61 @@
         }
         100% {
             left: calc(75% + 40px);
+        }
+    }
+
+    
+    @keyframes rightslide0 {
+        from {
+            right: -80px;
+        }
+        to {
+            right: calc(100% + 80px);
+        }
+    }
+
+    @keyframes rightslide25 {
+        0% {
+            right: calc(25% - 40px);
+        }
+        75% {
+            right: calc(100% + 80px);
+        }
+        75.000000001% {
+            right: -80px;
+        }
+        100% {
+            right: calc(25% - 40px);
+        }
+    }
+
+    @keyframes rightslide50 {
+        0% {
+            right: 50%;
+        }
+        50% {
+            right: calc(100% + 80px);
+        }
+        50.000000001% {
+            right: -80px;
+        }
+        100% {
+            right: 50%;
+        }
+    }
+
+    @keyframes rightslide75 {
+        0% {
+            right: calc(75% + 40px);
+        }
+        25% {
+            right: calc(100% + 80px);
+        }
+        25.000000001% {
+            right: -80px;
+        }
+        100% {
+            right: calc(75% + 40px);
         }
     }
     /*@keyframes slide {
