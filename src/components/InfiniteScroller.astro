@@ -1,81 +1,161 @@
 <container
-    class="relative block overflow-hidden mx-auto my-8 bg-black h-[500px] w-3/5 rounded-3xl"
+    class="relative block overflow-hidden mx-auto my-8 bg-nav-blue dark:bg-jade h-[360px] w-full"
 >
-    <div id="img"></div>
-    <div id="img3"></div>
-    <div id="img1"></div>
-    <div id="img4"></div>
-    <div id="img2"></div>
+    <img class="h-[80px]" src="/1stPortfolio/java.svg" id="img" />
+    <img class="h-[80px]" src="/1stPortfolio/csharp.svg" id="img1" />
+    <img class="h-[80px]" src="/1stPortfolio/sql.svg" id="img2" />
+    <img class="h-[80px]" src="/1stPortfolio/mongodb.svg" id="img3" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/react.svg" id="img4" />
+    <img
+        class="h-[70px] w-[80px] rounded-3xl"
+        src="/1stPortfolio/js.svg"
+        id="img5"
+    />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/kafka.svg" id="img6" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/astro.svg" id="img7" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/docker.svg" id="img8" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/python.svg" id="img9" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/linux.svg" id="img10" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/aws.svg" id="img11" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/nextjs.svg" id="img12" />
+    <img class="h-[80px] w-[80px]" src="/1stPortfolio/k8.svg" id="img13" />
+    <img class="h-[80px] w-[80px] rounded-3xl" src="/1stPortfolio/google.svg" id="img14" />
 </container>
 
 <style>
     /*for media do different (maybe same but vertical)*/
     #img {
-        background: url("/1stPortfolio/IST.svg");
         position: absolute;
-        
-        height: 150px;
-        width: 150px;
-        animation: slide1 10s linear infinite;
+        top: 8px;
+        animation: slide0 10s linear infinite;
     }
     #img1 {
-        background: url("/1stPortfolio/IST.svg");
         position: absolute;
-        left:-300px;
-        height: 150px;
-        width: 150px;
-        animation: slide 10s linear infinite;
+        top: 8px;
+        animation: slide50 10s linear infinite;
     }
-    #img2{
-        background: url("/1stPortfolio/IST.svg");
+    #img9 {
         position: absolute;
-        top: 302px;
-        left:-150px;
-        height: 150px;
-        width: 150px;
-        animation: slide 10s linear infinite;
+        top: 8px;
+        animation: slide25 10s linear infinite;
     }
-    #img3{
-        background: url("/1stPortfolio/IST.svg");
+    #img5 {
         position: absolute;
-        left:-150px;
-        top: 150px;
-        height: 150px;
-        width: 150;
-        animation: slide 5s linear infinite;
+        top: 8px;
+        animation: slide75 10s linear infinite;
     }
-    #img4{
-        background: url("/1stPortfolio/IST.svg");
+    #img8 {
         position: absolute;
-        top: 302px;
-        left:-150px;
-        height: 150px;
-        width: 150px;
-        animation: slide 10s linear infinite;
+        top: 96px;
+        animation: slide0 10s linear infinite;
     }
- 
+    #img2 {
+        position: absolute;
+        top: 96px;
+        animation: slide25 10s linear infinite;
+    }
+    #img10 {
+        position: absolute;
+        top: 96px;
+        animation: slide50 10s linear infinite;
+    }
+    #img3 {
+        position: absolute;
+        top: 96px;
+        animation: slide75 10s linear infinite;
+    }
+    #img4 {
+        position: absolute;
+        top: 184px;
+        animation: slide25 10s linear infinite;
+    }
+    #img12 {
+        position: absolute;
+        top: 184px;
+        animation: slide0 10s linear infinite;
+    }
+    #img7 {
+        position: absolute;
+        top: 184px;
+        animation: slide50 10s linear infinite;
+    }
+    #img12 {
+        position: absolute;
+        top: 184px;
+        animation: slide75 10s linear infinite;
+    }
+    #img6 {
+        position: absolute;
+        top: 272px;
+        animation: slide0 10s linear infinite;
+    }
+    #img14 {
+        position: absolute;
+        top: 272px;
+        animation: slide25 10s linear infinite;
+    }
+    #img11 {
+        position: absolute;
+        top: 272px;
+        animation: slide50 10s linear infinite;
+    }
+    #img13 {
+        position: absolute;
+        top: 272px;
+        animation: slide75 10s linear infinite;
+    }
 
-    @keyframes slide1 {
-        0%{
-            left:50%
-        }
-        50%{
-            left:100%
-        }
-        50.000000001%{
-            left:-150px
-        }
-        100%{
-            left:50%
-        }
-    }
-
-    @keyframes slide {
+    @keyframes slide0 {
         from {
-            background-position: 0 0;
+            left: -80px;
         }
         to {
-            left: 100%;
+            left: calc(100% + 80px);
+        }
+    }
+
+    @keyframes slide25 {
+        0% {
+            left: calc(25% - 40px);
+        }
+        75% {
+            left: calc(100% + 80px);
+        }
+        75.000000001% {
+            left: -80px;
+        }
+        100% {
+            left: calc(25% - 40px);
+        }
+    }
+
+    @keyframes slide50 {
+        0% {
+            left: 50%;
+        }
+        50% {
+            left: calc(100% + 80px);
+        }
+        50.000000001% {
+            left: -80px;
+        }
+        100% {
+            left: 50%;
+        }
+    }
+
+    @keyframes slide75 {
+        0% {
+            left: calc(75% + 40px);
+        }
+        25% {
+            left: calc(100% + 80px);
+        }
+        25.000000001% {
+            left: -80px;
+        }
+        100% {
+            left: calc(75% + 40px);
         }
     }
     /*@keyframes slide {
