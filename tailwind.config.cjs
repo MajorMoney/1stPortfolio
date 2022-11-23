@@ -5,6 +5,10 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	darkMode: 'class',
 	theme: {
+		screens:{
+			'md': '768px',
+			'lg': '1300px',
+		},
 		colors: {
 			'pele': '#fbd1a2',
 			'dark-pele': '#f79256',

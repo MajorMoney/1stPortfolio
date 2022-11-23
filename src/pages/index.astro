@@ -8,77 +8,78 @@ import { IoArrowForward } from "react-icons/io5/index.js";
 import HomePiece from "../components/HomePiece.astro";
 import AboutSection from "../components/AboutSection.astro";
 import InfiniteScroller from "../components/InfiniteScroller.astro";
+import Content from "../components/Content.astro";
+
+const projects = (await Astro.glob("../projects/*.md")).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.devDate).valueOf() -
+		new Date(a.frontmatter.devDate).valueOf()
+);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" />
 	</head>
 	<Body>
 		<Header title={SITE_TITLE} />
 		<main>
 			<a class="absolute top-0" id="Logo"></a>
 			<HomePiece />
-			<AboutSection/>
-			
+			<AboutSection />
+
 			<h1
-				class="text-nav-blue dark:text-jade font-orb font-bold text-center m-4 text-2xl underline decoration-dark-pele dark:decoration-pele"
+				class="text-nav-blue dark:text-jade font-orb font-bold text-center mb-8 mt-4 text-2xl underline decoration-dark-pele dark:decoration-pele"
 			>
 				<a id="Title2"></a>Tech Stack
 			</h1>
-			<InfiniteScroller></InfiniteScroller>
-			<div class="md:w-3/5  m-auto">
-			<h3 class="mb-0 mx-4 tracking-tight  text-left">
-				I know what you may be thinking...<br>
-				Yes, this is my tech stack, these are the tools I'm most acquainted with, I'm not claiming to be a pro with +10y of experience with each one of them.<br> Is quite the opposite, since I still want to deepen my knowledge of them.
-			</h3>
-			<h3 class="mb-7 mx-4 indent-8 tracking-tight  text-left">
-				
-			</h3>
+			<InfiniteScroller />
+			<div class="md:w-3/5 m-auto">
+				<h3 class="mb-0 mx-4 tracking-tight text-left">
+					I know what you may be thinking...<br />
+					Yes, this is my tech stack, these are the tools I'm most acquainted
+					with, I'm not claiming to be a pro with +10y of experience with
+					each one of them.<br /> Is quite the opposite, since I still
+					want to deepen my knowledge of them.
+				</h3>
+				<h3 class="mb-7 mx-4 indent-8 tracking-tight text-left"></h3>
 			</div>
 			<div class="block h-2 w-full bg-light-blue mb-10"></div>
 			<h1
+			class="text-nav-blue dark:text-jade text-center my-8 tracking-wide  text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
+		>
+			Projects
+		</h1>
+			<h1
 				class="text-pele dark:text-dark-pele font-orb font-bold text-center m-4 text-2xl"
 			>
-				This Portfolio is still in development
+				This Portfolio is 100% finished
 			</h1>
-			<section>
-				<p class="mb-7 mx-3 indent-4 ">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Praesent facilisis, lacus at suscipit rutrum, ante neque
-					consequat nunc, eget scelerisque nibh eros ut tellus.
-					Pellentesque quis felis lacus. Nulla at blandit arcu, eget
-					dignissim risus. Vivamus interdum sapien id lib ero
-					consequat, id condimentum libero suscipit. Etiam hendrerit
-					scelerisque ligula, in vulputate velit feugiat non. Quisque
-					id ultricies nulla. Aenean egestas magna sit amet ante
-					tincidunt rhoncus. Donec volutpat, magna ac semper
-					porttitor, leo sapien laoreet elit, a vehicula justo orci
-					sed ligula. Sed feugiat justo eu augue imperdiet, quis
-					lobortis tortor consectetur. Cras malesuada malesuada
-					dignissim. Cras id rutrum nibh, vel posuere diam.
-				</p>
-				<p class="mb-7 mx-3 indent-4">
-					Quisque in metus ut arcu elementum accumsan. Proin venenatis
-					orci at lorem mollis, ac elementum urna sodales.
-					Pellentesque volutpat mollis odio, eleifend feugiat sem
-					ullamcorper eu. Donec convallis justo justo, quis
-					pellentesque nunc malesuada ut. Donec diam magna, dapibus at
-					tortor non, sollicitudin ultricies neque. Etiam fringilla
-					libero et tellus consectetur, eget tristique velit mollis.
-					Suspendisse non tortor imperdiet, molestie nibh ac, iaculis
-					metus. Donec in suscipit ipsum. Integer sollicitudin nec sem
-					at egestas. Aenean a ipsum vel ante posuere gravida at at
-					est. Vestibulum convallis vel velit nec gravida. Curabitur
-					vel turpis quis libero interdum tristique.
-					<a
-						class="inline-flex items-center gap-1 ident-1 text-dark-orange dark:text-pele"
-					>
-						Some link if wanted<IoArrowForward className="inline" />
-					</a>
-				</p> 
+			<section></section>
+			<section class="content-center items-center">
+					<ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-3/5 mx-auto ">
+						{
+							projects.map((project) => (
+								<li class="text-center  m-4">
+									<a href={project.frontmatter.url}>
+										<img
+											class="border-[3px] border-dark-pele dark:border-pele rounded-xl w-[350px] h-[196.88px] mx-auto"
+											src={project.frontmatter.hero}
+											alt={"Thumbnail"}
+										/>
+										<div class="mt-3 text-xl">
+											{project.frontmatter.title}
+										</div>
+										<div class="opacity-70">
+											{project.frontmatter.prev}
+										</div>
+									</a>
+								</li>
+							))
+						}
+					</ul>
 			</section>
 		</main>
 		<Footer />
