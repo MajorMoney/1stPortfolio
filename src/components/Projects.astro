@@ -1,0 +1,81 @@
+---
+const projects = (await Astro.glob("../projects/*.md")).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.devDate).valueOf() -
+		new Date(a.frontmatter.devDate).valueOf()
+);
+---
+<section class="content-center items-center">
+    <h1
+    class="text-nav-blue dark:text-jade text-center my-8 tracking-wide text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
+>
+    Projects
+</h1>
+    <ul
+        class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-3/5 mx-auto"
+    >
+        {
+            projects.map((project) => (
+                <li class="text-center  m-4">
+                    <div
+                        id="heroBox"
+                        class="w-[350px] h-[196.88px] border-[3px] border-dark-pele dark:border-pele rounded-xl overflow-hidden mx-auto"
+                    >
+                        <a href={project.frontmatter.url}>
+                            <div id="heroInner">
+                                <img
+                                    id="hero"
+                                    class=" w-[350px] h-[196.88px] "
+                                    src={project.frontmatter.hero}
+                                    alt={"Thumbnail"}
+                                />
+                                <div
+                                    class="bg-light-blue  dark:bg-black dark:bg-opacity-50 bg-opacity-50"
+                                    id="backCard"
+                                >
+                                    <h2 class="mt-2 mx-4">
+                                        {project.frontmatter.title}
+                                    </h2>
+                                    <div class="opacity-800 mt-2 mx-4">
+                                        {project.frontmatter.prev}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="mt-3 text-xl">
+                        {project.frontmatter.title}
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
+</section>
+<style>
+    #heroBox {
+        perspective: 1000px;
+    }
+    #heroInner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    #heroBox:hover #heroInner {
+        transform: rotateY(180deg);
+        text-transform: rotateY(180deg);
+    }
+    #hero,
+    #backCard {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+    #backCard {
+        transform: rotateY(180deg);
+    }
+</style>

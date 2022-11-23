@@ -4,17 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Body from "../components/Body.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import { IoArrowForward } from "react-icons/io5/index.js";
 import HomePiece from "../components/HomePiece.astro";
 import AboutSection from "../components/AboutSection.astro";
 import InfiniteScroller from "../components/InfiniteScroller.astro";
-import Content from "../components/Content.astro";
+import Projects from "../components/Projects.astro";
 
-const projects = (await Astro.glob("../projects/*.md")).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.devDate).valueOf() -
-		new Date(a.frontmatter.devDate).valueOf()
-);
 ---
 
 <!DOCTYPE html>
@@ -39,56 +33,24 @@ const projects = (await Astro.glob("../projects/*.md")).sort(
 			<div class="md:w-3/5 m-auto">
 				<h3 class="mb-0 mx-4 tracking-tight text-left">
 					I know what you may be thinking...<br />
-					Yes, this is my tech stack, these are the tools I'm most acquainted
-					with, I'm not claiming to be a pro with +10y of experience with
-					each one of them.<br /> Is quite the opposite, since I still
-					want to deepen my knowledge of them.
+					These are the tools I'm most acquainted with, I'm not claiming
+					to be a pro with +10y of experience with each one of them.<br
+					/> Is quite the opposite, since I still want to deepen my knowledge
+					of them.
 				</h3>
 				<h3 class="mb-7 mx-4 indent-8 tracking-tight text-left"></h3>
 			</div>
 			<div class="block h-2 w-full bg-light-blue mb-10"></div>
-			<h1
-			class="text-nav-blue dark:text-jade text-center my-8 tracking-wide  text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
-		>
-			Projects
-		</h1>
+		
 			<h1
 				class="text-pele dark:text-dark-pele font-orb font-bold text-center m-4 text-2xl"
 			>
-				This Portfolio is 100% finished
+				Still in Development
 			</h1>
 			<section></section>
-			<section class="content-center items-center">
-					<ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-3/5 mx-auto ">
-						{
-							projects.map((project) => (
-								<li class="text-center  m-4">
-									<a href={project.frontmatter.url}>
-										<img
-											class="border-[3px] border-dark-pele dark:border-pele rounded-xl w-[350px] h-[196.88px] mx-auto"
-											src={project.frontmatter.hero}
-											alt={"Thumbnail"}
-										/>
-										<div class="mt-3 text-xl">
-											{project.frontmatter.title}
-										</div>
-										<div class="opacity-70">
-											{project.frontmatter.prev}
-										</div>
-									</a>
-								</li>
-							))
-						}
-					</ul>
-			</section>
+			<Projects/>
+			
 		</main>
 		<Footer />
 	</Body>
-
-	<!--	<style>
-		main {
-			padding-top: clamp(105px, 10%, 150px);
-		}
-	</style>
--->
 </html>
