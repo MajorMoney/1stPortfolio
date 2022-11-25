@@ -1,5 +1,5 @@
 ---
-const projects = (await Astro.glob("../projects/*.md")).sort(
+const projects = (await Astro.glob("../pages/projects/*.md")).sort(
 	(a: any, b: any) =>
 		new Date(b.frontmatter.devDate).valueOf() -
 		new Date(a.frontmatter.devDate).valueOf()
@@ -21,7 +21,7 @@ const projects = (await Astro.glob("../projects/*.md")).sort(
                         id="heroBox"
                         class="w-[350px] h-[196.88px] border-[3px] border-dark-pele dark:border-pele rounded-xl overflow-hidden mx-auto"
                     >
-                        <a href={project.frontmatter.url}>
+                        <a href={project.url}>
                             <div id="heroInner">
                                 <img
                                     id="hero"
