@@ -19,7 +19,7 @@ export interface Props {
 }
 
 const {
-    content: { title, description, prev, devDate, url, hero, secondHero },
+    content: { title, description, prev, devDate,updateDate, url, hero, secondHero },
 } = Astro.props;
 ---
 
@@ -45,7 +45,7 @@ const {
                     }
                 </div>
                 <h1 class="text-3xl my-1 font-mplus">{title}</h1>
-                <div>Last updated{description}</div>
+                <div>Last updated{updateDate}</div>
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span
