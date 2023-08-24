@@ -1,129 +1,116 @@
 ---
 import { AiOutlineLinkedin } from "react-icons/ai/index.js";
 import { FiGithub } from "react-icons/fi/index.js";
+import Jobs from "../components/Jobs.astro";
 ---
 
 <section class="flex flex-col justify-center items-center mt-24">
-    <div
-        class="flex-col place-content-between items-center p-2 h-min-[180px] w-max-3/4 text-left"
-    >
-        <div class="flex mb-4">
-            <div class="flex-col m-1">
-                <h1
-                    class="inline-flex flex-grow place-content-center m-2 tracking-wide text-2xl ml-1 font-orb"
-                >
-                    Pedro Nuno Franco Correia
-                </h1>
-                <h2 class="mx-3 opacity-80">
-                    Computer Engineer // Software Developer // Freelancer
-                </h2>
-            </div>
-            <div
-                class="flex-shrink-0 items-center place-content-center justify-center m-1"
-            >
-                <img
-                    class="block h-32 w-32 mx-2 rounded-full border-dark-pele dark:border-pele border-4"
-                    src="/1stPortfolio/Capz.jpg"
-                    alt="Avatar"
-                />
-            </div>
-        </div>
+  <div
+    class="flex-col place-content-between items-center p-2 h-min-[180px] w-max-3/4 text-left"
+  >
+    <div class="flex mb-4">
+      <div class="flex-col m-1">
         <h1
-            class="text-nav-blue dark:text-jade text-center my-8 tracking-wide  text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
+          class="inline-flex flex-grow place-content-center m-2 tracking-wide text-2xl ml-1 font-orb"
         >
-            About
+          Pedro Nuno Franco Correia
         </h1>
+        <h2 class="mx-3 opacity-80">
+          Computer Engineer // Software Developer // Freelancer
+        </h2>
+      </div>
+      <div
+        class="flex-shrink-0 items-center place-content-center justify-center m-1"
+      >
+        <img
+          class="block h-32 w-32 mx-2 rounded-full border-dark-pele dark:border-pele border-4"
+          src="/1stPortfolio/Capz.jpg"
+          alt="Avatar"
+        />
+      </div>
     </div>
-    <h3 class="mb-7 mx-4 indent-8 tracking-tight md:w-3/5 text-left">
-        <a id="About"></a>
-        Hi, I'm Pedro.<br />
-        I am very passionate about programming. From a fresh start that brings a
-        demanding study and exciting planning attributed to a newborn project.
-        The struggling "thinkering", the miss and match, and the trial and error
-        that lead to its maturation. And finally the satisfaction in turning nothing
-        into something, the completeness of turning ideas into value&#x2B50.
-    </h3>
-    <div
-        class="flex-col mb-4 w-full md:w-max-3/4 md:w-3/5 text-left tracking-wider"
+    <h1
+      class="text-nav-blue dark:text-jade text-center my-8 tracking-wide text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
     >
-        <div class="flex place-content-evenly mb-4 text-center p-4">
-            <div>
-                From: <img
-                    class="w-[20px] inline"
-                    src="/1stPortfolio/portugal-flag-icon.svg"
-                /><br /><p class="font-orb text-sm">29/04/98</p>
-            </div>
-            <div>
-                Living: <img class="w-[20px] inline" src="/1stPortfolio/italy.svg" /><br /><p
-                    class="font-orb text-sm"
-                >
-                    03/10/22
-                </p> 
-            </div>
-        </div>
-
-        <div class="flex place-content-evenly mb-4 text-center p-4">
-            <div>
-                <h3 class="text-dark-pele dark:text-pele">Bachelor's:</h3><p
-                    class="font-orb text-sm"
-                >
-                    06/19<br />Computer Engineering
-                </p>
-                <a href="https://www.iscte-iul.pt/" target="_blank"
-                    ><p class="text-jade">ISCTE-IUL</p> 
-                </a>
-            </div>
-            <div>
-                <h3 class="text-dark-pele dark:text-pele">Master's:</h3>
-                <p class="font-orb text-sm">
-                    at: (March/23)<br />Computer Engineering
-                </p>
-                <a href="https://tecnico.ulisboa.pt/en/" target="_blank"
-                    ><img class="w-[100px] mt-1 inline" src="/1stPortfolio/IST.svg" />
-                </a>
-            </div>
-        </div>
-        <div>
-            <div
-                class="flex-row mb-8 mx-4 md:mx-0 text-dark-pele dark:text-pele"
-            >
-                I<img
-                    class="w-[20px] inline ml-1 translate-y-[-10%]"
-                    src="/1stPortfolio/heart.svg"
-                /> :
-                <p class="inline text-dark-blue dark:text-light-blue font-mono">
-                    Cyber Security, Distributed Applications, Web Development,
-                    Traveling, Sports
-                </p>
-            </div>
-            <h3 class="mb-4 mx-4 md:mx-0 text-dark-pele dark:text-pele">
-                Work:
-            </h3>
-            <a class="absolute translate-y-[-100px]" id="Links"/>
-            
-            <section
-                class="flex items-center text-light-blue dark:text-dark-blue place-content-center overflow- bg-dark-blue dark:bg-light-blue md:rounded-3xl"
-            >
-                <div
-                    class="box p-3 border-4 m-4 rounded-full hover:text-dark-pele hover:dark:text-pele"
-                >
-                    <a
-                        class=""
-                        href="https://github.com/MajorMoney"
-                        target="_blank"
-                        ><FiGithub size={40} />
-                    </a>
-                </div>
-                <div
-                    class="box p-3 border-4 m-4 rounded-full hover:text-dark-pele hover:dark:text-pele"
-                >
-                    <a
-                        href="https://www.linkedin.com/in/pedronfcorreia98/"
-                        target="_blank"
-                        ><AiOutlineLinkedin size={40} />
-                    </a>
-                </div>
-            </section>
-        </div>
+      About
+    </h1>
+  </div>
+  <h3 class="mb-7 mx-4 indent-8 tracking-tight md:w-3/5 text-left">
+    <a id="About"></a>
+    Hi, I''m Pedro.<br />
+    I am very passionate about programming. From a fresh start that brings a demanding
+    study and exciting planning attributed to a newborn project. The struggling "thinkering",
+    the miss and match, and the trial and error that lead to its maturation. And
+    finally the satisfaction in turning nothing into something, the completeness
+    of turning ideas into value&#x2B50.
+  </h3>
+  <div
+    class="flex-col mb-4 w-full md:w-max-3/4 md:w-3/5 text-left tracking-wider"
+  >
+    <div class="flex place-content-evenly mb-4 text-center p-4">
+      <div>
+        <img
+          class="w-[60px] inline"
+          src="/1stPortfolio/portugal-flag-icon.svg"
+        /><br /><p class="font-orb text-sm">29/04/98</p>
+      </div>
     </div>
+
+    <div class="flex place-content-evenly mb-4 text-center p-4">
+      <div>
+        <h3 class="text-dark-pele dark:text-pele">Bachelor's:</h3><p
+          class="font-orb text-sm"
+        >
+          06/19<br />Computer Engineering
+        </p>
+        <a href="https://www.iscte-iul.pt/" target="_blank"
+          ><p class="text-jade">ISCTE-IUL</p>
+        </a>
+      </div>
+      <div>
+        <h3 class="text-dark-pele dark:text-pele">Master's:</h3>
+        <p class="font-orb text-sm">
+          08/22<br />Computer Engineering
+        </p>
+        <a href="https://tecnico.ulisboa.pt/en/" target="_blank"
+          ><img class="w-[100px] mt-1 inline" src="/1stPortfolio/IST.svg" />
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="flex-row mb-8 mx-4 md:mx-0 text-dark-pele dark:text-pele">
+        I<img
+          class="w-[20px] inline ml-1 translate-y-[-10%]"
+          src="/1stPortfolio/heart.svg"
+        /> :
+        <p class="inline text-dark-blue dark:text-light-blue font-mono">
+          Cyber Security, Distributed Applications, Web Development, Traveling,
+          Sports
+        </p>
+      </div>
+      <Jobs />
+      <a class="absolute translate-y-[-100px]" id="Links"></a>
+
+      <section
+        class="flex items-center text-light-blue dark:text-dark-blue place-content-center overflow- bg-dark-blue dark:bg-light-blue md:rounded-3xl"
+      >
+        <div
+          class="box p-3 border-4 m-4 rounded-full hover:text-dark-pele hover:dark:text-pele"
+        >
+          <a class="" href="https://github.com/MajorMoney" target="_blank"
+            ><FiGithub size={40} />
+          </a>
+        </div>
+        <div
+          class="box p-3 border-4 m-4 rounded-full hover:text-dark-pele hover:dark:text-pele"
+        >
+          <a
+            href="https://www.linkedin.com/in/pedronfcorreia98/"
+            target="_blank"
+            ><AiOutlineLinkedin size={40} />
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
 </section>

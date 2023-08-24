@@ -1,0 +1,84 @@
+---
+import BaseHead from "./BaseHead.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import Body from "./Body.astro";
+
+export interface Props {
+  content: {
+    company: string;
+    role: string;
+    type: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    jobDescription: string;
+    skills: string;
+  };
+}
+
+const jobs = (await Astro.glob("../pages/jobs/*.md")).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.startDate).valueOf() -
+    new Date(a.frontmatter.startDate).valueOf()
+);
+---
+
+<section class="content-center items-center">
+  <h1
+    class="text-nav-blue dark:text-jade text-center my-8 tracking-wide text-2xl font-orb underline decoration-dark-pele dark:decoration-pele"
+  >
+    Work
+  </h1>
+  <ul class="mx-auto">
+    {
+      jobs.map((job) => (
+        <li class="text-center  m-4">
+          <div class="experience-item">
+            <div class="experience-header text-dark-pele dark:text-pele font-bold">
+              <h3>{job.frontmatter.role}</h3>
+              <p>{job.frontmatter.company}</p>
+              <p>
+                {job.frontmatter.startDate} - {job.frontmatter.endDate}
+              </p>
+            </div>
+            <div class="text-justify my-5">
+              {job.frontmatter.jobDescription.split(/\r?\n/).map((x, index) => (
+                <span key={index}>
+                  {x}
+                  <br />
+                </span>
+              ))}
+            </div>
+            <p class="underline decoration-dark-pele dark:decoration-pele">
+              SKILLS
+            </p>
+            <p class="my-5">{job.frontmatter.skills}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+<style>
+  /* Apply some basic styling to the experience section */
+  .experience {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Style individual experience items */
+  .experience-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+</style>
