@@ -6,54 +6,76 @@ import Body from "../components/Body.astro";
 import Content from "../components/Content.astro";
 
 export interface Props {
-    content: {
-        title?: string;
-        prev?: string;
-        description?: string;
-        devDate?: string;
-        updateDate?: string;
-        url?: string;
-        hero?: string;
-        secondHero?: string;
-    };
+  content: {
+    title?: string;
+    prev?: string;
+    description?: string;
+    devDate?: string;
+    lastUpdated?: string;
+    url?: string;
+    hero?: string;
+    secondHero?: string;
+  };
 }
 
 const {
-    content: { title, description, prev, devDate,updateDate, url, hero, secondHero },
+  content: {
+    title,
+    description,
+    prev,
+    devDate,
+    lastUpdated,
+    url,
+    hero,
+    secondHero,
+  },
 } = Astro.props;
+console.log(description);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <BaseHead title={title} description={description} image={hero} />
-    </head>
+  <head>
+    <BaseHead title={title} description={description} image={hero} />
+  </head>
 
-    <Body>
-        <Header />
-        <main class="pt-[56px] ">
-            <Content className="pt-6 ">
-                <div class="mb-8 ">
-                    {
-                            <img
-                                class="self-center border-[3px] border-dark-pele dark:border-dark-pele rounded-xl"
-                                width={720}
-                                height={360}
-                                src={hero}
-                                alt=""
-                            />
-                    }
-                </div>
-                <h1 class="text-3xl my-1 font-mplus">{title}</h1>
-                <div>Last updated{updateDate}</div>
-                <hr class="border-top border-zinc-400 my-4" />
-                <slot />
-                <span
-                    class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
-                ></span>
-                <div class="mb-8">{description}</div>
-            </Content>
-        </main>
-        <Footer />
-    </Body>
+  <Body>
+    <Header />
+    <main class="pt-[56px]">
+      <Content className="pt-6 ">
+        <div class="mb-8">
+          {
+            (
+              <img
+                class="self-center border-[3px] border-dark-pele dark:border-dark-pele rounded-xl"
+                width={720}
+                height={360}
+                src={hero}
+                alt=""
+              />
+            )
+          }
+        </div>
+        <h1 class="text-3xl my-1 font-mplus">{title}</h1>
+        <div>Last updated at {lastUpdated}</div>
+        <hr class="border-top border-zinc-400 my-4" />
+        <slot />
+        <span
+          class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
+        ></span>
+        <div class="mb-8">
+          {
+            description.split(/\r?\\/).map((x, index) => (
+              <span key={index}>
+                {x}
+                <br />
+                <br />
+              </span>
+            ))
+          }
+        </div>
+      </Content>
+    </main>
+    <Footer />
+  </Body>
 </html>
